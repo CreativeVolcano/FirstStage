@@ -5,11 +5,15 @@ const App = () => {
   return (
     <div id="canvas-container">
       <Canvas>
-        <boxGeometry />
-        <meshStandardMaterial />
+        <ambientLight intensity={0.001} />
+        <directionalLight color="red" position={[0, 0, 5]} />
+        <mesh>
+          <boxGeometry args={[20, 2, 2]} />
+          <meshStandardMaterial />
+        </mesh>
       </Canvas>
     </div>
   );
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+export default App;
