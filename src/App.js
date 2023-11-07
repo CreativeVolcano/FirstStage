@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import {OrbitControls} from "@react-three/drei";
+import {Box, OrbitControls, Plane, Sphere} from "@react-three/drei";
 
 
 const App = () => {
@@ -9,10 +9,11 @@ const App = () => {
         <ambientLight intensity={0.001} />
         <pointLight color="white" position={[5, 7, 5]} decay={0}/>
         <ambientLight />
-        <mesh>
-          <boxGeometry args={[2, 2, 2]} />
-          <meshStandardMaterial color={"red"} />
-        </mesh>
+        <Box args={[10, 1, 1]} material-color="hotpink" />
+        <Plane args={[2, 2]} />
+        <Sphere>
+          <meshStandardMaterial color="hotpink" />
+        </Sphere>
         <OrbitControls />
       </Canvas>
     </div>
